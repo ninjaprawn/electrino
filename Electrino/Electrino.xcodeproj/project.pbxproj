@@ -7,48 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AA9DBB31EB9F58B00EF7CC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBB21EB9F58B00EF7CC9 /* AppDelegate.m */; };
-		5AA9DBB61EB9F58B00EF7CC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBB51EB9F58B00EF7CC9 /* main.m */; };
+		5AA9DBB31EB9F58B00EF7CC9 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBB21EB9F58B00EF7CC9 /* AppDelegate.mm */; };
+		5AA9DBB61EB9F58B00EF7CC9 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBB51EB9F58B00EF7CC9 /* main.mm */; };
 		5AA9DBB81EB9F58B00EF7CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9DBB71EB9F58B00EF7CC9 /* Assets.xcassets */; };
 		5AA9DBBB1EB9F58B00EF7CC9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9DBB91EB9F58B00EF7CC9 /* MainMenu.xib */; };
-		5AA9DBC51EBA08BF00EF7CC9 /* ENOBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBC31EBA08BF00EF7CC9 /* ENOBrowserWindowController.m */; };
-		5AA9DBD41EBA0D1200EF7CC9 /* ENOJavaScriptApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBD31EBA0D1200EF7CC9 /* ENOJavaScriptApp.m */; };
-		5AA9DBDE1EBA4F7B00EF7CC9 /* ENOJSPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBDD1EBA4F7B00EF7CC9 /* ENOJSPath.m */; };
-		5AA9DBE41EBA4F9B00EF7CC9 /* ENOJSUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBE31EBA4F9B00EF7CC9 /* ENOJSUrl.m */; };
-		5AA9DBE71EBA502000EF7CC9 /* ENOJSBrowserWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBE61EBA502000EF7CC9 /* ENOJSBrowserWindow.m */; };
-		5AA9DBEA1EBA502D00EF7CC9 /* ENOJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBE91EBA502D00EF7CC9 /* ENOJSApp.m */; };
-		5AA9DBED1EBA55B700EF7CC9 /* ENOJSProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBEC1EBA55B700EF7CC9 /* ENOJSProcess.m */; };
-		5AA9DBF01EBA564600EF7CC9 /* ENOJSConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBEF1EBA564600EF7CC9 /* ENOJSConsole.m */; };
+		5AA9DBC51EBA08BF00EF7CC9 /* ENOBrowserWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBC31EBA08BF00EF7CC9 /* ENOBrowserWindowController.mm */; };
+		5AA9DBD41EBA0D1200EF7CC9 /* ENOJavaScriptApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBD31EBA0D1200EF7CC9 /* ENOJavaScriptApp.mm */; };
+		5AA9DBDE1EBA4F7B00EF7CC9 /* ENOJSPath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBDD1EBA4F7B00EF7CC9 /* ENOJSPath.mm */; };
+		5AA9DBE41EBA4F9B00EF7CC9 /* ENOJSUrl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBE31EBA4F9B00EF7CC9 /* ENOJSUrl.mm */; };
+		5AA9DBE71EBA502000EF7CC9 /* ENOJSBrowserWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBE61EBA502000EF7CC9 /* ENOJSBrowserWindow.mm */; };
+		5AA9DBEA1EBA502D00EF7CC9 /* ENOJSApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBE91EBA502D00EF7CC9 /* ENOJSApp.mm */; };
+		5AA9DBED1EBA55B700EF7CC9 /* ENOJSProcess.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBEC1EBA55B700EF7CC9 /* ENOJSProcess.mm */; };
+		5AA9DBF01EBA564600EF7CC9 /* ENOJSConsole.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9DBEF1EBA564600EF7CC9 /* ENOJSConsole.mm */; };
 		5AA9DBF21EBA7C0700EF7CC9 /* ENOBrowserWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9DBF11EBA7C0700EF7CC9 /* ENOBrowserWindowController.xib */; };
 		BC44C7D01EBF2D0E008C569A /* app in Resources */ = {isa = PBXBuildFile; fileRef = BC44C7CF1EBF2D0E008C569A /* app */; };
+		BC558A601EC3F21F00EE0528 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A5F1EC3F21F00EE0528 /* Foundation.framework */; };
+		BC558A621EC3F22700EE0528 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A611EC3F22700EE0528 /* JavaScriptCore.framework */; };
+		BC558A641EC3F5CE00EE0528 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A631EC3F5CE00EE0528 /* AppKit.framework */; };
+		BC558A661EC3F5E200EE0528 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A651EC3F5E200EE0528 /* WebKit.framework */; };
+		BCA4D1D11EC1AFF300273635 /* ENOCPPExposer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D1D01EC1AFF300273635 /* ENOCPPExposer.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5AA9DBAE1EB9F58A00EF7CC9 /* ElectrinoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectrinoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA9DBB11EB9F58B00EF7CC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5AA9DBB21EB9F58B00EF7CC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5AA9DBB51EB9F58B00EF7CC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5AA9DBB21EB9F58B00EF7CC9 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		5AA9DBB51EB9F58B00EF7CC9 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		5AA9DBB71EB9F58B00EF7CC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AA9DBBA1EB9F58B00EF7CC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5AA9DBBC1EB9F58B00EF7CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AA9DBC21EBA08BE00EF7CC9 /* ENOBrowserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOBrowserWindowController.h; sourceTree = "<group>"; };
-		5AA9DBC31EBA08BF00EF7CC9 /* ENOBrowserWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOBrowserWindowController.m; sourceTree = "<group>"; };
+		5AA9DBC31EBA08BF00EF7CC9 /* ENOBrowserWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOBrowserWindowController.mm; sourceTree = "<group>"; };
 		5AA9DBD21EBA0D1200EF7CC9 /* ENOJavaScriptApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJavaScriptApp.h; sourceTree = "<group>"; };
-		5AA9DBD31EBA0D1200EF7CC9 /* ENOJavaScriptApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJavaScriptApp.m; sourceTree = "<group>"; };
+		5AA9DBD31EBA0D1200EF7CC9 /* ENOJavaScriptApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOJavaScriptApp.mm; sourceTree = "<group>"; };
 		5AA9DBDC1EBA4F7B00EF7CC9 /* ENOJSPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSPath.h; sourceTree = "<group>"; };
-		5AA9DBDD1EBA4F7B00EF7CC9 /* ENOJSPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSPath.m; sourceTree = "<group>"; };
+		5AA9DBDD1EBA4F7B00EF7CC9 /* ENOJSPath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOJSPath.mm; sourceTree = "<group>"; };
 		5AA9DBE21EBA4F9B00EF7CC9 /* ENOJSUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSUrl.h; sourceTree = "<group>"; };
-		5AA9DBE31EBA4F9B00EF7CC9 /* ENOJSUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSUrl.m; sourceTree = "<group>"; };
+		5AA9DBE31EBA4F9B00EF7CC9 /* ENOJSUrl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOJSUrl.mm; sourceTree = "<group>"; };
 		5AA9DBE51EBA502000EF7CC9 /* ENOJSBrowserWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSBrowserWindow.h; sourceTree = "<group>"; };
-		5AA9DBE61EBA502000EF7CC9 /* ENOJSBrowserWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSBrowserWindow.m; sourceTree = "<group>"; };
+		5AA9DBE61EBA502000EF7CC9 /* ENOJSBrowserWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOJSBrowserWindow.mm; sourceTree = "<group>"; };
 		5AA9DBE81EBA502D00EF7CC9 /* ENOJSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSApp.h; sourceTree = "<group>"; };
-		5AA9DBE91EBA502D00EF7CC9 /* ENOJSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSApp.m; sourceTree = "<group>"; };
+		5AA9DBE91EBA502D00EF7CC9 /* ENOJSApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOJSApp.mm; sourceTree = "<group>"; };
 		5AA9DBEB1EBA55B700EF7CC9 /* ENOJSProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSProcess.h; sourceTree = "<group>"; };
-		5AA9DBEC1EBA55B700EF7CC9 /* ENOJSProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSProcess.m; sourceTree = "<group>"; };
+		5AA9DBEC1EBA55B700EF7CC9 /* ENOJSProcess.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOJSProcess.mm; sourceTree = "<group>"; };
 		5AA9DBEE1EBA564600EF7CC9 /* ENOJSConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSConsole.h; sourceTree = "<group>"; };
-		5AA9DBEF1EBA564600EF7CC9 /* ENOJSConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSConsole.m; sourceTree = "<group>"; };
+		5AA9DBEF1EBA564600EF7CC9 /* ENOJSConsole.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOJSConsole.mm; sourceTree = "<group>"; };
 		5AA9DBF11EBA7C0700EF7CC9 /* ENOBrowserWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ENOBrowserWindowController.xib; sourceTree = "<group>"; };
 		BC44C7CF1EBF2D0E008C569A /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
+		BC558A5F1EC3F21F00EE0528 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC558A611EC3F22700EE0528 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		BC558A631EC3F5CE00EE0528 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BC558A651EC3F5E200EE0528 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		BC5919F71EC5F0FC00D52FF2 /* objcruntime-special.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "objcruntime-special.h"; sourceTree = "<group>"; };
+		BCA4D1D01EC1AFF300273635 /* ENOCPPExposer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ENOCPPExposer.mm; sourceTree = "<group>"; };
+		BCA4D1D21EC1B00D00273635 /* ENOCPPExposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ENOCPPExposer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC558A661EC3F5E200EE0528 /* WebKit.framework in Frameworks */,
+				BC558A641EC3F5CE00EE0528 /* AppKit.framework in Frameworks */,
+				BC558A621EC3F22700EE0528 /* JavaScriptCore.framework in Frameworks */,
+				BC558A601EC3F21F00EE0528 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +84,7 @@
 				BC44C7CF1EBF2D0E008C569A /* app */,
 				5AA9DBB01EB9F58A00EF7CC9 /* Electrino */,
 				5AA9DBAF1EB9F58A00EF7CC9 /* Products */,
+				BC558A5E1EC3F21F00EE0528 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,13 +99,14 @@
 		5AA9DBB01EB9F58A00EF7CC9 /* Electrino */ = {
 			isa = PBXGroup;
 			children = (
+				BCA4D1CF1EC1AFC200273635 /* C++ */,
 				5AA9DBD51EBA4D8500EF7CC9 /* JS API implementations */,
 				5AA9DBB11EB9F58B00EF7CC9 /* AppDelegate.h */,
-				5AA9DBB21EB9F58B00EF7CC9 /* AppDelegate.m */,
+				5AA9DBB21EB9F58B00EF7CC9 /* AppDelegate.mm */,
 				5AA9DBD21EBA0D1200EF7CC9 /* ENOJavaScriptApp.h */,
-				5AA9DBD31EBA0D1200EF7CC9 /* ENOJavaScriptApp.m */,
+				5AA9DBD31EBA0D1200EF7CC9 /* ENOJavaScriptApp.mm */,
 				5AA9DBC21EBA08BE00EF7CC9 /* ENOBrowserWindowController.h */,
-				5AA9DBC31EBA08BF00EF7CC9 /* ENOBrowserWindowController.m */,
+				5AA9DBC31EBA08BF00EF7CC9 /* ENOBrowserWindowController.mm */,
 				5AA9DBF11EBA7C0700EF7CC9 /* ENOBrowserWindowController.xib */,
 				5AA9DBB71EB9F58B00EF7CC9 /* Assets.xcassets */,
 				5AA9DBB91EB9F58B00EF7CC9 /* MainMenu.xib */,
@@ -101,7 +119,7 @@
 		5AA9DBB41EB9F58B00EF7CC9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5AA9DBB51EB9F58B00EF7CC9 /* main.m */,
+				5AA9DBB51EB9F58B00EF7CC9 /* main.mm */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -110,19 +128,40 @@
 			isa = PBXGroup;
 			children = (
 				5AA9DBDC1EBA4F7B00EF7CC9 /* ENOJSPath.h */,
-				5AA9DBDD1EBA4F7B00EF7CC9 /* ENOJSPath.m */,
+				5AA9DBDD1EBA4F7B00EF7CC9 /* ENOJSPath.mm */,
 				5AA9DBE21EBA4F9B00EF7CC9 /* ENOJSUrl.h */,
-				5AA9DBE31EBA4F9B00EF7CC9 /* ENOJSUrl.m */,
+				5AA9DBE31EBA4F9B00EF7CC9 /* ENOJSUrl.mm */,
 				5AA9DBE51EBA502000EF7CC9 /* ENOJSBrowserWindow.h */,
-				5AA9DBE61EBA502000EF7CC9 /* ENOJSBrowserWindow.m */,
+				5AA9DBE61EBA502000EF7CC9 /* ENOJSBrowserWindow.mm */,
 				5AA9DBE81EBA502D00EF7CC9 /* ENOJSApp.h */,
-				5AA9DBE91EBA502D00EF7CC9 /* ENOJSApp.m */,
+				5AA9DBE91EBA502D00EF7CC9 /* ENOJSApp.mm */,
 				5AA9DBEB1EBA55B700EF7CC9 /* ENOJSProcess.h */,
-				5AA9DBEC1EBA55B700EF7CC9 /* ENOJSProcess.m */,
+				5AA9DBEC1EBA55B700EF7CC9 /* ENOJSProcess.mm */,
 				5AA9DBEE1EBA564600EF7CC9 /* ENOJSConsole.h */,
-				5AA9DBEF1EBA564600EF7CC9 /* ENOJSConsole.m */,
+				5AA9DBEF1EBA564600EF7CC9 /* ENOJSConsole.mm */,
 			);
 			name = "JS API implementations";
+			sourceTree = "<group>";
+		};
+		BC558A5E1EC3F21F00EE0528 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC558A651EC3F5E200EE0528 /* WebKit.framework */,
+				BC558A631EC3F5CE00EE0528 /* AppKit.framework */,
+				BC558A611EC3F22700EE0528 /* JavaScriptCore.framework */,
+				BC558A5F1EC3F21F00EE0528 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCA4D1CF1EC1AFC200273635 /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				BCA4D1D01EC1AFF300273635 /* ENOCPPExposer.mm */,
+				BCA4D1D21EC1B00D00273635 /* ENOCPPExposer.h */,
+				BC5919F71EC5F0FC00D52FF2 /* objcruntime-special.h */,
+			);
+			name = "C++";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,16 +236,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA9DBDE1EBA4F7B00EF7CC9 /* ENOJSPath.m in Sources */,
-				5AA9DBB61EB9F58B00EF7CC9 /* main.m in Sources */,
-				5AA9DBE71EBA502000EF7CC9 /* ENOJSBrowserWindow.m in Sources */,
-				5AA9DBED1EBA55B700EF7CC9 /* ENOJSProcess.m in Sources */,
-				5AA9DBEA1EBA502D00EF7CC9 /* ENOJSApp.m in Sources */,
-				5AA9DBE41EBA4F9B00EF7CC9 /* ENOJSUrl.m in Sources */,
-				5AA9DBC51EBA08BF00EF7CC9 /* ENOBrowserWindowController.m in Sources */,
-				5AA9DBB31EB9F58B00EF7CC9 /* AppDelegate.m in Sources */,
-				5AA9DBD41EBA0D1200EF7CC9 /* ENOJavaScriptApp.m in Sources */,
-				5AA9DBF01EBA564600EF7CC9 /* ENOJSConsole.m in Sources */,
+				5AA9DBDE1EBA4F7B00EF7CC9 /* ENOJSPath.mm in Sources */,
+				5AA9DBB61EB9F58B00EF7CC9 /* main.mm in Sources */,
+				5AA9DBE71EBA502000EF7CC9 /* ENOJSBrowserWindow.mm in Sources */,
+				5AA9DBED1EBA55B700EF7CC9 /* ENOJSProcess.mm in Sources */,
+				5AA9DBEA1EBA502D00EF7CC9 /* ENOJSApp.mm in Sources */,
+				BCA4D1D11EC1AFF300273635 /* ENOCPPExposer.mm in Sources */,
+				5AA9DBE41EBA4F9B00EF7CC9 /* ENOJSUrl.mm in Sources */,
+				5AA9DBC51EBA08BF00EF7CC9 /* ENOBrowserWindowController.mm in Sources */,
+				5AA9DBB31EB9F58B00EF7CC9 /* AppDelegate.mm in Sources */,
+				5AA9DBD41EBA0D1200EF7CC9 /* ENOJavaScriptApp.mm in Sources */,
+				5AA9DBF01EBA564600EF7CC9 /* ENOJSConsole.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,11 +354,17 @@
 		5AA9DBC01EB9F58B00EF7CC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.63.0/include/;
 				INFOPLIST_FILE = Electrino/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = fi.lacquer.ElectrinoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -327,11 +373,17 @@
 		5AA9DBC11EB9F58B00EF7CC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.63.0/include/;
 				INFOPLIST_FILE = Electrino/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = fi.lacquer.ElectrinoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

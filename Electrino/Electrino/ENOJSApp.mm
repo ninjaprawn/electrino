@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSMutableDictionary *eventCallbacks;
 
+@property (nonatomic) boost::any cppObject;
 @end
 
 

@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "ENOJSApp.h"
+#import "ENOCPPExposer.h"
 
 
 extern NSString * const kENOJavaScriptErrorDomain;

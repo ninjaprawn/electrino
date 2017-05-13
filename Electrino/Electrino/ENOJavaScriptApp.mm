@@ -16,6 +16,11 @@
 #import "ENOJSProcess.h"
 #import "ENOJSConsole.h"
 
+#import "ENOCPPExposer.h"
+
+extern "C"
+const char *_protocol_getMethodTypeEncoding(Protocol *p, SEL sel, BOOL isRequiredMethod, BOOL isInstanceMethod);
+
 
 NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
 
@@ -119,8 +124,147 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
 		return (id)nil;
 		
     };
-    
-    self.jsContext[@"process"] = [[ENOJSProcess alloc] init];
+
+	Object test;
+	test.insert(pair<string, ENOType>("platform", CreateString("darwin")));
+	test.insert(pair<string, ENOType>("@name", CreateString("RuntimeProcess")));
+	
+	ENOType func;
+	func.type = "fstring<string>";
+	std::function<string(string)> realfunc = [](string str) -> string {
+		return str + std::string("r/MadLads");
+	};
+	func.value = realfunc;
+	test.insert(pair<string, ENOType>("coolFunc", func));
+	
+	id runtimeObj = exposeCPPObjectToJS(test);
+	
+	self.jsContext[@"process"] = runtimeObj;
+	
+	ENOJSPath *p = [[ENOJSPath alloc] init];
+//
+	printf("----------- Properties -----------\n");
+//
+	unsigned int count;
+	objc_property_t *props = class_copyPropertyList([self.jsAppGlobalObject class], &count);
+	for (int i = 0; i < count; i++) {
+//		if (strstr("platform", property_getName(props[i])))
+			NSLog(@"Real Class - %s: %s", property_getName(props[i]), property_getAttributes(props[i]));
+	}
+	
+	props = protocol_copyPropertyList(objc_getProtocol("ENOJSAppExports"), &count);
+	for (int i = 0; i < count; i++) {
+//		if (strstr("platform", property_getName(props[i])))
+			NSLog(@"Real Protocol - %s: %s", property_getName(props[i]), property_getAttributes(props[i]));
+	}
+//
+//	props = class_copyPropertyList([runtimeObj class], &count);
+//	for (int i = 0; i < count; i++) {
+//		if (strstr("platform", property_getName(props[i])))
+//			NSLog(@"Runtime Class - %s: %s", property_getName(props[i]), property_getAttributes(props[i]));
+//	}
+//	
+//	props = protocol_copyPropertyList(objc_getProtocol("RuntimeClassJS"), &count);
+//	for (int i = 0; i < count; i++) {
+//		if (strstr("platform", property_getName(props[i])))
+//			NSLog(@"Runtime Protocol - %s: %s", property_getName(props[i]), property_getAttributes(props[i]));
+//	}
+//	
+	printf("----------- Methods -----------\n");
+//
+	Method* m = class_copyMethodList(object_getClass(self.jsAppGlobalObject), &count);
+	for (int i = 0; i < count; i++) {
+		NSLog(@"Real Class - %s: %s, %s", sel_getName(method_getName(m[i])), method_copyReturnType(m[i]), method_getTypeEncoding(m[i]));
+	}
+
+	objc_method_description *methods = protocol_copyMethodDescriptionList(objc_getProtocol("ENOJSAppExports"), YES, YES, &count);
+	for (int i = 0; i < count; i++) {
+		NSLog(@"Real Protocol - %s: %s, %s", sel_getName(methods[i].name), methods[i].types, _protocol_getMethodTypeEncoding(objc_getProtocol("ENOJSAppExports"), methods[i].name, YES, YES));
+	}
+//
+//	m = class_copyMethodList(object_getClass(runtimeObj), &count);
+//	for (int i = 0; i < count; i++) {
+//		NSLog(@"Runtime Class - %s: %s, %s", sel_getName(method_getName(m[i])), method_copyReturnType(m[i]), method_getTypeEncoding(m[i]));
+//	}
+//
+//	methods = protocol_copyMethodDescriptionList(objc_getProtocol("RuntimeClassJS"), YES, YES, &count);
+//	
+//	for (int i = 0; i < count; i++) {
+//		NSLog(@"Runtime Protocol - %s: %s, %s", sel_getName(methods[i].name), methods[i].types, _protocol_getMethodTypeEncoding(objc_getProtocol("RuntimeClassJS"), methods[i].name, YES, YES));
+//	}
+
+//
+	printf("----------- Ivars -----------\n");
+//
+	Ivar *ivars = class_copyIvarList([self.jsAppGlobalObject class], &count);
+	for (int i = 0; i < count; i++) {
+//		if (strstr("platform", ivar_getName(iva÷rs[i])))
+			NSLog(@"Real Protocol - %s: %s with %ld", ivar_getName(ivars[i]), ivar_getTypeEncoding(ivars[i]), ivar_getOffset(ivars[i]));
+	}
+//
+//	ivars = class_copyIvarList([runtimeObj class], &count);
+//	for (int i = 0; i < count; i++) {
+//		if (strstr("platform", ivar_getName(ivars[i])))
+//			NSLog(@"Runtime Protocol - %s: %s with %ld", ivar_getName(ivars[i]), ivar_getTypeEncoding(ivars[i]), ivar_getOffset(ivars[i]));
+//	}
+//	
+//	
+//	printf("----------- Voodoo -----------\n");
+	//
+//	protocol_t *proto = (__bridge protocol_t*)objc_getProtocol("ENOJSProcessExports");
+//	const char **methTypes = proto->extendedMethodTypes;
+//	NSLog(@"Huh %s", methTypes[0]);
+//	
+//	protocol_t *proto2 = (__bridge protocol_t*)objc_getProtocol("RuntimeClassJS");
+//	const char **methTypes2 = proto2->extendedMethodTypes;
+//	NSLog(@"Huh %s", methTypes2[0]);
+//
+//	printf("----------- End Debug -----------\n");
+
+	
+//	
+//	unsigned int count;
+//	Method* m = class_copyMethodList(object_getClass(p), &count);
+//	for (int i = 0; i < count; i++) {
+//		NSLog(@"Real Class - %s: %s, %s", sel_getName(method_getName(m[i])), method_copyReturnType(m[i]), method_getTypeEncoding(m[i]));
+//	}
+//	
+//	objc_method_description *methods = protocol_copyMethodDescriptionList(objc_getProtocol("ENOJSProcessExports"), YES, YES, &count);
+//	for (int i = 0; i < count; i++) {
+//		NSLog(@"Real Protocol - %s: %s", sel_getName(methods[i].name), methods[i].types);
+//	}
+//	
+//	m = class_copyMethodList(object_getClass(runtimeObj), &count);
+//	for (int i = 0; i < count; i++) {
+//		NSLog(@"Runtime - %s: %s, %s", sel_getName(method_getName(m[i])), method_copyReturnType(m[i]), method_getTypeEncoding(m[i]));
+//	}
+//	
+//	methods = protocol_copyMethodDescriptionList(objc_getProtocol("RuntimeClassJS"), YES, YES, &count);
+//	for (int i = 0; i < count; i++) {
+//		NSLog(@"Runtime Protocol - %s: %s", sel_getName(methods[i].name), methods[i].types);
+//	}
+	
+	
+//
+	
+//	count;
+//	Ivar *te = class_copyIvarList([ENOJSProcess class], &count);
+//	NSLog(@"count: %d", count);
+//	Ivar ivar = te[0];
+//	NSLog(@"%s", ivar_getTypeEncoding(ivar));
+//	
+//	unsigned int count;
+//	objc_property_t *props = class_copyPropertyList([ENOJSProcess class], &count);
+//	NSLog(@"count: %d", count);
+//	objc_property_t first = props[0];
+//	NSLog(@"%s", property_getAttributes(first));
+	
+//	props = protocol_copyPropertyList(objc_getProtocol("ENOJSProcessExports"), &count);
+//	NSLog(@"count: %d", count);
+//	first = props[0];
+//	NSLog(@"%s", property_getName(first));
+	
+	
     self.jsContext[@"console"] = [[ENOJSConsole alloc] init];
     
     return self;

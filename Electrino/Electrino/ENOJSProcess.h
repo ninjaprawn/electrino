@@ -8,13 +8,14 @@
 //  This software may be modified and distributed under the terms of the MIT license.  See the LICENSE file for details.
 //
 
+#include <string>
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 
 
 @protocol ENOJSProcessExports <JSExport>
 
-@property (nonatomic, copy) NSString *platform;
+@property (nonatomic, copy) NSString* platform;
 @property (nonatomic, copy) NSDictionary *versions;
 
 @end

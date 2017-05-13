@@ -8,7 +8,13 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 var win = null
 
-console.log("hello world starting, app is: ", app);
+//for (var n in process) {
+//	console.log(n);
+//}
+
+console.log("process.platform:", process.platform);
+process.platform = "hi";
+console.log("process.platform:", process.platform);
 
 function createWindow () {
   // Create the browser window.

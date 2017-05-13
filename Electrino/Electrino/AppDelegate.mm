@@ -12,7 +12,6 @@
 #import "ENOJavaScriptApp.h"
 #import "ENOBrowserWindowController.h"
 
-
 @interface AppDelegate ()
 
 @end
@@ -26,7 +25,7 @@
 {
     NSString *appDir = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"app"];
     NSString *mainJSPath = [appDir stringByAppendingPathComponent:@"main.js"];
-    
+	
     if ( ![[NSFileManager defaultManager] fileExistsAtPath:mainJSPath]) {
         NSLog(@"** no main.js found in dir: %@", appDir);
         [NSApp terminate:nil]; // --

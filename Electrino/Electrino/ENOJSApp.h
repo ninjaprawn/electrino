@@ -10,6 +10,11 @@
 
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
+
+#include <iostream>
+
+#include <boost/any.hpp>
+
 @class ENOJavaScriptApp;
 
 
