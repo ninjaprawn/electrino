@@ -26,6 +26,11 @@
 using namespace std;
 using namespace boost;
 
+
+extern "C"
+const char *_protocol_getMethodTypeEncoding(Protocol *p, SEL sel, BOOL isRequiredMethod, BOOL isInstanceMethod);
+
+
 #define stringToNSString(str) [NSString stringWithUTF8String:str.c_str()]
 #define NSStringToString(str) std::string([str UTF8String])
 #define getString(obj, key) boost::any_cast<std::string>(obj.at(key).value)

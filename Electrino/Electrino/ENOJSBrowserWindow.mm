@@ -47,7 +47,7 @@
     [self.windowController showWindow:nil];
 
     
-    __block __weak ENOJSBrowserWindow *weakSelf = self;
+    __block  ENOJSBrowserWindow *weakSelf = self;
     
     self.on = ^(NSString *event, JSValue *cb) {
         if (event.length > 0 && cb) {

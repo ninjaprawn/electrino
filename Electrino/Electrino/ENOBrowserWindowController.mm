@@ -18,7 +18,7 @@
 #define USE_WKWEBVIEW 0
 
 
-#import "ENOJSProcess.h"
+#import "ENOCPPExposer.h"
 
 
 
@@ -104,8 +104,80 @@
 
 - (void)webView:(WebView *)webView didCreateJavaScriptContext:(JSContext *)jsContext forFrame:(WebFrame *)frame
 {
-    ENOJSProcess *process = [[ENOJSProcess alloc] init];
-    jsContext[@"process"] = process;
+	Object test;
+	test.insert(pair<string, ENOType>("platform", CreateString("darwin")));
+	test.insert(pair<string, ENOType>("meme", CreateString("w00t")));
+	test.insert(pair<string, ENOType>("@name", CreateString("RuntimeProcess")));
+	//
+	//	ENOType func;
+	//	func.type = "fstring<string>";
+	//	std::function<string(string)> realfunc = [](string str) -> string {
+	//		return str + std::string("r/MadLads");
+	//	};
+	//	func.value = realfunc;
+	//	test.insert(pair<string, ENOType>("coolFunc", func));
+	
+	id runtimeObj = exposeCPPObjectToJS(test);
+	printf("----------- Properties -----------\n");
+	//
+	unsigned int count;
+	objc_property_t *props = class_copyPropertyList([runtimeObj class], &count);
+	for (int i = 0; i < count; i++) {
+		//		if (strstr("platform", property_getName(props[i])))
+		NSLog(@"Real Class - %s: %s", property_getName(props[i]), property_getAttributes(props[i]));
+	}
+	
+	props = protocol_copyPropertyList(objc_getProtocol("RuntimeProcessJS"), &count);
+	for (int i = 0; i < count; i++) {
+		//		if (strstr("platform", property_getName(props[i])))
+		NSLog(@"Real Protocol - %s: %s", property_getName(props[i]), property_getAttributes(props[i]));
+	}
+	//
+	//	props = class_copyPropertyList([runtimeObj class], &count);
+	//	for (int i = 0; i < count; i++) {
+	//		if (strstr("platform", property_getName(props[i])))
+	//			NSLog(@"Runtime Class - %s: %s", property_getName(props[i]), property_getAttributes(props[i]));
+	//	}
+	//
+	//	props = protocol_copyPropertyList(objc_getProtocol("RuntimeClassJS"), &count);
+	//	for (int i = 0; i < count; i++) {
+	//		if (strstr("platform", property_getName(props[i])))
+	//			NSLog(@"Runtime Protocol - %s: %s", property_getName(props[i]), property_getAttributes(props[i]));
+	//	}
+	//
+	printf("----------- Methods -----------\n");
+	//
+	Method* m = class_copyMethodList(object_getClass(runtimeObj), &count);
+	for (int i = 0; i < count; i++) {
+		NSLog(@"Real Class - %s: %s, %s", sel_getName(method_getName(m[i])), method_copyReturnType(m[i]), method_getTypeEncoding(m[i]));
+	}
+	
+	objc_method_description *methods = protocol_copyMethodDescriptionList(objc_getProtocol("RuntimeProcessJS"), YES, YES, &count);
+	for (int i = 0; i < count; i++) {
+		NSLog(@"Real Protocol - %s: %s, %s", sel_getName(methods[i].name), methods[i].types, _protocol_getMethodTypeEncoding(objc_getProtocol("RuntimeProcessJS"), methods[i].name, YES, YES));
+	}
+	//
+	//	m = class_copyMethodList(object_getClass(runtimeObj), &count);
+	//	for (int i = 0; i < count; i++) {
+	//		NSLog(@"Runtime Class - %s: %s, %s", sel_getName(method_getName(m[i])), method_copyReturnType(m[i]), method_getTypeEncoding(m[i]));
+	//	}
+	//
+	//	methods = protocol_copyMethodDescriptionList(objc_getProtocol("RuntimeClassJS"), YES, YES, &count);
+	//
+	//	for (int i = 0; i < count; i++) {
+	//		NSLog(@"Runtime Protocol - %s: %s, %s", sel_getName(methods[i].name), methods[i].types, _protocol_getMethodTypeEncoding(objc_getProtocol("RuntimeClassJS"), methods[i].name, YES, YES));
+	//	}
+	
+	//
+	printf("----------- Ivars -----------\n");
+	//
+	Ivar *ivars = class_copyIvarList([runtimeObj class], &count);
+	for (int i = 0; i < count; i++) {
+		//		if (strstr("platform", ivar_getName(iva÷rs[i])))
+		NSLog(@"Real Protocol - %s: %s with %ld", ivar_getName(ivars[i]), ivar_getTypeEncoding(ivars[i]), ivar_getOffset(ivars[i]));
+	}
+	
+	jsContext[@"process"] = runtimeObj;
 }
 
 - (void)webView:(WebView *)webView didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame

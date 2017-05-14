@@ -9,6 +9,42 @@
 #ifndef objcruntime_special_h
 #define objcruntime_special_h
 
+
+typedef uintptr_t cache_key_t;
+
+#if __LP64__
+typedef uint32_t mask_t;
+#   define MASK_SHIFT ((mask_t)0)
+#else
+typedef uint16_t mask_t;
+#   define MASK_SHIFT ((mask_t)0)
+#endif
+
+struct cache_t {
+	struct bucket_t *buckets;
+	mask_t shiftmask;
+	mask_t occupied;
+	
+	mask_t mask() {
+		return shiftmask >> MASK_SHIFT;
+	}
+	mask_t capacity() {
+		return shiftmask ? (shiftmask >> MASK_SHIFT) + 1 : 0;
+	}
+	void setCapacity(uint32_t capacity) {
+		uint32_t newmask = (capacity - 1) << MASK_SHIFT;
+		assert(newmask == (uint32_t)(mask_t)newmask);
+		shiftmask = newmask;
+	}
+	
+	void expand();
+	void reallocate(mask_t oldCapacity, mask_t newCapacity);
+	struct bucket_t * find(cache_key_t key);
+	
+	static void bad_cache(id receiver, SEL sel, Class isa, bucket_t *bucket) __attribute__((noreturn));
+};
+
+
 typedef struct classref * classref_t;
 
 struct method_t {
@@ -185,4 +221,57 @@ struct protocol_list_t {
 };
 
 
+struct class_ro_t {
+	uint32_t flags;
+	uint32_t instanceStart;
+	uint32_t instanceSize;
+#ifdef __LP64__
+	uint32_t reserved;
+#endif
+	
+	const uint8_t * ivarLayout;
+	
+	const char * name;
+	const method_list_t * baseMethods;
+	const protocol_list_t * baseProtocols;
+	const ivar_list_t * ivars;
+	
+	const uint8_t * weakIvarLayout;
+	const property_list_t *baseProperties;
+};
+
+struct class_rw_t {
+	uint32_t flags;
+	uint32_t version;
+	
+	const class_ro_t *ro;
+	
+	union {
+		method_list_t **method_lists;  // RW_METHOD_ARRAY == 1
+		method_list_t *method_list;    // RW_METHOD_ARRAY == 0
+	};
+	struct chained_property_list *properties;
+	const protocol_list_t ** protocols;
+	
+	Class firstSubclass;
+	Class nextSiblingClass;
+};
+
+
+struct objc_class_t {
+	Class isa;
+	
+//#if !__OBJC2__
+	Class super_class                                        ;
+	const char *name                                         ;
+	long version                                             ;
+	long info                                                ;
+	long instance_size                                       ;
+	struct objc_ivar_list *ivars                             ;
+	struct objc_method_list **methodLists                    ;
+	struct objc_cache *cache                                 ;
+	struct objc_protocol_list *protocols                     ;
+//#endif
+	
+};
 #endif /* objcruntime_special_h */

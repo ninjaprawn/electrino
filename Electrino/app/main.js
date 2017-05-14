@@ -12,9 +12,9 @@ var win = null
 //	console.log(n);
 //}
 
-console.log("process.platform:", process.platform);
-process.platform = "hi";
-console.log("process.platform:", process.platform);
+console.log("process.platform:", process.platform, process.meme);
+//process.platform = "hi";
+//console.log("process.platform:", process.platform);
 
 function createWindow () {
   // Create the browser window.
@@ -28,7 +28,6 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }))
-
 	
   // Emitted when the window is closed.
   win.on('closed', function(){
