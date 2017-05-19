@@ -32,6 +32,10 @@ id getter(id self, SEL _cmd) {
 	return object_getIvar(self, class_getInstanceVariable([self class], sel_getName(_cmd)));
 }
 
+NSMutableArray *extendedMethodTypesMem = [[NSMutableArray alloc] init];
+const char ***prettyBigArrayWeReallyNeed = NULL;
+int len = 0;
+
 id exposeCPPObjectToJS(Object obj) {
 	
 	Object realObj(obj);
@@ -131,7 +135,6 @@ id exposeCPPObjectToJS(Object obj) {
 		for (int i = 0; i < extendedMethodTypes.count; i++) {
 			proto2->extendedMethodTypes [i] = [extendedMethodTypes objectAtIndex:i].UTF8String;
 		}
-		
 
 		// Finally we can register our class and protocol
 		objc_registerProtocol(customProtocol);
@@ -149,6 +152,7 @@ id exposeCPPObjectToJS(Object obj) {
 	
 	object_setIvar(runtimeObject, class_getInstanceVariable([runtimeObject class], "platform"), getNSString(obj, "platform"));
 	object_setIvar(runtimeObject, class_getInstanceVariable([runtimeObject class], "meme"), getNSString(obj, "meme"));
+	
 	
 //	std::function<string(string)> realFunc = boost::any_cast<std::function<string(string)>>(obj.at("coolFunc").value);
 //	NSLog(@"%@", stringToNSString(realFunc(NSStringToString(@"kappa: "))));

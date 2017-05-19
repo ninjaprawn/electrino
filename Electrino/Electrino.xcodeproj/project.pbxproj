@@ -25,7 +25,7 @@
 		BC558A621EC3F22700EE0528 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A611EC3F22700EE0528 /* JavaScriptCore.framework */; };
 		BC558A641EC3F5CE00EE0528 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A631EC3F5CE00EE0528 /* AppKit.framework */; };
 		BC558A661EC3F5E200EE0528 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A651EC3F5E200EE0528 /* WebKit.framework */; };
-		BCA4D1D11EC1AFF300273635 /* ENOCPPExposer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D1D01EC1AFF300273635 /* ENOCPPExposer.mm */; };
+		BCA4D1D11EC1AFF300273635 /* ENOCPPExposer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BCA4D1D01EC1AFF300273635 /* ENOCPPExposer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
